@@ -1,0 +1,17 @@
+﻿@using (Html.BeginNavBar())
+{
+    @Html.NavBarItem("Accueil","/")
+    @Html.NavBarItem("User","/User")
+    @Html.NavBarItem("User create","/User/Register")
+}
+
+@Html.HTag(1,"Bienvenu en ASP MVC!")
+@Html.HTag(2,"Un travail de qualité!")
+
+@Html.NumericTable(12,5)
+
+@using (Html.BeginForm())
+{
+    <input type="button" value="Youhou!">
+    
+}
