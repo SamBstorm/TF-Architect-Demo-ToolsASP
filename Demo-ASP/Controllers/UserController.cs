@@ -33,7 +33,7 @@ namespace Demo_ASP.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(UserCreateForm form)
         {
-            ValidatePassword(form, ModelState);
+            //ValidatePassword(form, ModelState);
             if (!ModelState.IsValid) return View(form);
             return RedirectToAction("Details", new { id = 1 });
         }

@@ -19,7 +19,7 @@ namespace Demo_ASP.Models
 
         [Required(ErrorMessage = "Le pseudo est obligatoire.")]
         [MinLength(2)]
-        [MaxLength(32)] 
+        [MaxLength(32)]
         [DisplayName("Pseudo :")]
         public string Pseudo { get; set; }
         [Required(ErrorMessage = "Le date de naissance est obligatoire.")]
@@ -29,17 +29,20 @@ namespace Demo_ASP.Models
 
         [Required(ErrorMessage = "L'adresse email est obligatoire.")]
         [MinLength(5)]
-        [MaxLength(255)] 
+        [MaxLength(255)]
         [DisplayName("Adresse e-mail :")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Le mot de passe est obligatoire.")]
         [MinLength(8)]
-        [MaxLength(32)] 
+        [MaxLength(32)]
         [DisplayName("Mot de passe :")]
         [DataType(DataType.Password)]
-        [NeedLowerCase(5)]
+        [NeedLowerCase]
+        [NeedUpperCase]
+        [NeedNumeric]
+        [NeedSpecialCharacter(1,'-','\\','+','@','.','?','*','=')]
         //[RegularExpression(@"^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\-\.=+*@?]).*$", ErrorMessage ="Le format est trop simple pour la sécurité.")]
         public string Password { get; set; }
         [DisplayName("Veuillez confirmer votre mot de passe :")]
