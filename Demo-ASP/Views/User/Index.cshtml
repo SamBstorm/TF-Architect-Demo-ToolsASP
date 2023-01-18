@@ -1,4 +1,6 @@
-﻿@using (Html.BeginNavBar())
+﻿@model UserIndexView
+
+@using (Html.BeginNavBar())
 {
     @Html.NavBarItem("Accueil","/")
     @Html.NavBarItem("User","/User")
@@ -8,10 +10,8 @@
 @Html.HTag(1,"Bienvenu en ASP MVC!")
 @Html.HTag(2,"Un travail de qualité!")
 
+<design-title title-content="Voici un tagHelper!"></design-title>
+
 @Html.NumericTable(12,5)
 
-@using (Html.BeginForm())
-{
-    <input type="button" value="Youhou!">
-    
-}
+<validation-div validation-for="MainTitle"></validation-div>

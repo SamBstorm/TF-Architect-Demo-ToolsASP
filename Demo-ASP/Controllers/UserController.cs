@@ -13,7 +13,8 @@ namespace Demo_ASP.Controllers
         // GET: UserController
         public ActionResult Index()
         {
-            return View();
+            UserIndexView model = new UserIndexView() { MainTitle = "TagHelper basé sur un model!"};
+            return View(model);
         }
 
         // GET: UserController/Details/5
